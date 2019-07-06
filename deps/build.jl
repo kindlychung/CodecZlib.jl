@@ -4,7 +4,7 @@ using Libdl
 # Parse some basic command-line arguments
 const verbose = "--verbose" in ARGS
 const prefix = Prefix(get([a for a in ARGS if a != "--verbose"], 1, joinpath(@__DIR__, "usr")))
-@info "####Prefix: prefix"
+@info "####Prefix: $prefix"
 mkpath(prefix)
 products = [
     LibraryProduct(prefix, ["libz"], :libz),
